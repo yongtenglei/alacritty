@@ -88,7 +88,7 @@ font:
     #   - (Linux) sourcecodepro 14
     #   - (Windows) Consolas
     family: Cascadia Code PL
-    style: Retina
+    style: SemiBold Retina
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
@@ -101,7 +101,7 @@ font:
     family: Cascadia Code PL
     # Rec Mono Linear
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: SemiBold Bold
 
   # Italic font face
   italic:
@@ -109,10 +109,10 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family:  Cascadia Code PL
+    family: Cascadia Code PL
     # Rec Mono Linear
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    style: SemiBold  Italic
 
   # Point size
   size: 11.0
@@ -144,7 +144,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  #use_thin_strokes: false
 
   debug:
     # display the time it takes to redraw each frame.
@@ -156,30 +156,30 @@ font:
 colors:
   # Default colors
   primary:
-    background: "#2E3440"
-    foreground: "#D8DEE9"
+    background: '#2E3440'
+    foreground: '#D8DEE9'
 
   # Normal colors
   normal:
-    black: "#3B4252"
-    red: "#BF616A"
-    green: "#A3BE8C"
-    yellow: "#EBCB8B"
-    blue: "#81A1C1"
-    magenta: "#B48EAD"
-    cyan: "#88C0D0"
-    white: "#E5E9F0"
+    black: '#3B4252'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#88C0D0'
+    white: '#E5E9F0'
 
   # Bright colors
   bright:
-    black: "#4C566A"
-    red: "#BF616A"
-    green: "#A3BE8C"
-    yellow: "#EBCB8B"
-    blue: "#81A1C1"
-    magenta: "#B48EAD"
-    cyan: "#8FBCBB"
-    white: "#ECEFF4"
+    black: '#4C566A'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#8FBCBB'
+    white: '#ECEFF4'
 
 bell:
   animation: EaseOutExpo
@@ -210,9 +210,22 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 key_binding:
   # ctrl+shift+c : 复制
-  - {key: C,mods: Control|Shift,action: Copy}
+  - { key: C, mods: Control|Shift, action: Copy }
   # ctrl+shift+v : 粘贴
-  - {key: V,mods: Control|Shift,action: Paste}
+  - { key: V, mods: Control|Shift, action: Paste }
+
+  # Support for CSI u mode:
+
+  # Control + <key> ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+
+  - { key: Return, mods: Control, chars: "\x1b[13;5u" }
+
+  # Control + <letter> ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+
+  - { key: H, mods: Control, chars: "\x1b[104;5u" }
+  - { key: I, mods: Control, chars: "\x1b[105;5u" }
+  - { key: J, mods: Control, chars: "\x1b[106;5u" }
+  - { key: M, mods: Control, chars: "\x1b[109;5u" }
 
 mouse:
   # Click settings
@@ -298,5 +311,9 @@ live_config_reload: true
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
+import:
+  # uncomment the flavour you want below:
+  #- ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  #- ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  #- ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
