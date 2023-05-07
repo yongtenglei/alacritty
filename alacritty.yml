@@ -1,5 +1,15 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+import:
+  # uncomment the flavour you want below:
+  #- ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  #- ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  #- ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+  #- ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+
+  # ayu
+  - ~/.config/alacritty/ayu/ayu.yaml
+
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -154,32 +164,56 @@ font:
 
 # Colors (Nord)
 colors:
-  # Default colors
   primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
-
-  # Normal colors
+    background: '0xfafafa'
+    foreground: '0x5b6672'
+    # Normal colors
   normal:
-    black: '#3B4252'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#88C0D0'
-    white: '#E5E9F0'
-
+    black: '0x000000' #0
+    red: '0xf2590b' #1
+    green: '0x76cc00' #2
+    yellow: '0xf29717' #3
+    blue: '0x41a5d9' #4
+    magenta: '0x9965cc' #5
+    cyan: '0x4dbf98' #6
+    white: '0xc7c7c7' #7
   # Bright colors
   bright:
-    black: '#4C566A'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#8FBCBB'
-    white: '#ECEFF4'
+    black: '0xc7c8cf'
+    red: '0xd6646a' #9
+    green: '0xa3d900' #10
+    yellow: '0xe7c446' #11
+    blue: '0x6871ff' #12
+    magenta: '0xa37acc' #13
+    cyan: '0x56d9ad' #14
+    white: '0xF3F4F5' #15
+
+  ## Default colors
+  #primary:
+  #background: '#2E3440'
+  #foreground: '#D8DEE9'
+
+  ## Normal colors
+  #normal:
+  #black: '#3B4252'
+  #red: '#BF616A'
+  #green: '#A3BE8C'
+  #yellow: '#EBCB8B'
+  #blue: '#81A1C1'
+  #magenta: '#B48EAD'
+  #cyan: '#88C0D0'
+  #white: '#E5E9F0'
+
+  ## Bright colors
+  #bright:
+  #black: '#4C566A'
+  #red: '#BF616A'
+  #green: '#A3BE8C'
+  #yellow: '#EBCB8B'
+  #blue: '#81A1C1'
+  #magenta: '#B48EAD'
+  #cyan: '#8FBCBB'
+  #white: '#ECEFF4'
 
 bell:
   animation: EaseOutExpo
@@ -310,10 +344,3 @@ live_config_reload: true
 # Alacritty will fall back to the WinPTY automatically if the ConPTY
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
-
-import:
-  # uncomment the flavour you want below:
-  #- ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-  #- ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
-  #- ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
-  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
